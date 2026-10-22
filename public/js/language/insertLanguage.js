@@ -48,7 +48,7 @@ async function insertLanguage() {
     if (!isValid) {
         return false;
     }
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const key = document.getElementById("key").value
     const elements = document.getElementsByName("language[]");
     let valuesLanguage = [];

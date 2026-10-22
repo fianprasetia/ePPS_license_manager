@@ -83,7 +83,7 @@ async function showModalUpdatePartners(id) {
     return false;
 }
 async function updatePartners() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const dataLogin = await JSON.parse(getCookie("dataLogin"));
     const username = dataLogin["username"];
     const code = document.getElementById("code").value

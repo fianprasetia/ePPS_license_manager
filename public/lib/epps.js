@@ -1,15 +1,15 @@
 // testClientBandwidth()
-window.addEventListener("DOMContentLoaded", () => {
-  const iconColor = localStorage.getItem("bandwidthIconColor");
-  const keterangan = localStorage.getItem("bandwidthKeterangan");
-  const speed = localStorage.getItem("bandwidthSpeed");
-  if (iconColor && keterangan) {
-    document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal ${iconColor}"></i>`;
-    document.getElementById("textConnection").innerHTML = `${keterangan} (${speed} Mbps)`
-  } else {
-    document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal text-gray"></i>`;
-  }
-});
+// window.addEventListener("DOMContentLoaded", () => {
+//   const iconColor = localStorage.getItem("bandwidthIconColor");
+//   const keterangan = localStorage.getItem("bandwidthKeterangan");
+//   const speed = localStorage.getItem("bandwidthSpeed");
+//   if (iconColor && keterangan) {
+//     document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal ${iconColor}"></i>`;
+//     document.getElementById("textConnection").innerHTML = `${keterangan} (${speed} Mbps)`
+//   } else {
+//     document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal text-gray"></i>`;
+//   }
+// });
 
 async function testClientBandwidth() {
   const xhr = new XMLHttpRequest();
@@ -296,7 +296,7 @@ let estate
 let vehicle_number
 
 async function content() {
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   const data = "file/language.json";
   const response = await fetch(data);
   const jsonData = await response.json();
@@ -658,7 +658,7 @@ function kapital(str) {
 async function selectLanguage() {
   return new Promise(async (resolve, reject) => {
     try {
-      let language = JSON.parse(getCookie("language"));
+      let language = JSON.parse(getCookie("languageLM"));
 
       var xhr = new XMLHttpRequest();
       var url = mainUrl + "language";
@@ -835,7 +835,7 @@ async function autoTranslate(param) {
 }
 async function dictionary(param) {
   return new Promise((resolve, reject) => {
-    const language = JSON.parse(getCookie("language"));
+    const language = JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = secondUrl + "translate/auto";
 
@@ -973,7 +973,7 @@ function convertToMinutes(time) {
 // async function approvalTransaction() {
 //   const dataLogin = await JSON.parse(getCookie("dataLogin"));
 //   const employeeID = dataLogin["idEmployee"];
-//   const language = await JSON.parse(getCookie("language"));
+//   const language = await JSON.parse(getCookie("languageLM"));
 //   var token = await JSON.parse(getCookie("dataToken"));
 //   if (!token) {
 //     token = await getAccessToken(); // ✅ sekarang beneran tunggu token
@@ -1093,7 +1093,7 @@ function formatRupiah(money) {
   return new Intl.NumberFormat("id-ID", { minimumFractionDigits: 0 }).format(money);
 }
 async function deleteFile(fileUrl) {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   var xhr = new XMLHttpRequest();
   var url = secondUrl + "deletefile";
   xhr.onerror = function () {

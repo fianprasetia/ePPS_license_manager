@@ -35,7 +35,7 @@ async function insertMenu() {
     }
     Dashmix.onLoad(() => e.init());
   })();
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   const level = document.getElementById("level").value;

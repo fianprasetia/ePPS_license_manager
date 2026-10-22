@@ -18,7 +18,7 @@ async function showModalInsertPartners() {
   document.getElementById("partnersType").disabled = false
 }
 async function insertPartners() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

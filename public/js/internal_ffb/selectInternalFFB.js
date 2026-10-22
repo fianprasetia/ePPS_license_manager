@@ -1,6 +1,6 @@
 selectContent()
 async function selectContent() {
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = await "file/language.json";
     const response = await fetch(data);
     const jsonData = await response.json();
@@ -59,7 +59,7 @@ async function selectContent() {
     }
 }
 async function selectWeighBridge() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     let xhr = new XMLHttpRequest();
     let url = mainUrl + "weightbridge";
     xhr.onerror = function () {
@@ -115,7 +115,7 @@ async function selectWeighBridge() {
     xhr.send(data);
 }
 async function selectEstate(estateID) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "company/estate"
     xhr.onerror = function () {
@@ -187,7 +187,7 @@ async function selectEstate(estateID) {
     return false;
 }
 async function selectDivision(estateID, divisionID) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const estate = estateID || document.getElementById("estate").value
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "company/division"
@@ -257,7 +257,7 @@ async function selectDivision(estateID, divisionID) {
     return false;
 }
 async function selectBlock(divisionID, blockID) {
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const division = divisionID || document.getElementById("division").value
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "company/block"
@@ -323,7 +323,7 @@ async function selectBlock(divisionID, blockID) {
     return false;
 }
 async function selectVehicleNumber(vehicleID) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "vehiclenumber/bytransaction"
     xhr.onerror = function () {
@@ -422,7 +422,7 @@ async function getWeightOut() {
 
 async function printInternalFFB() {
 
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const id = document.getElementById("ticket").value; ``
     let xhr = new XMLHttpRequest();
     let url = mainUrl + "weightbridge/byticketno";

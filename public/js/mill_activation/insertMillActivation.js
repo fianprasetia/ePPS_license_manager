@@ -5,7 +5,7 @@ async function showModalInsertMillActivation(id) {
     document.getElementById("loadsearch").disabled = false
 }
 async function insertMillActivation(el) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const responseData = JSON.parse(el.dataset.response);
     let xhr = new XMLHttpRequest();
     let url = mainUrl + "millactivation/insert";
@@ -93,7 +93,7 @@ async function activeCode() {
         "<span class='input-group-text fw-semibold btn btn-primary'>\
               <i class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></i>\
         </span>";
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     let code = document.getElementById("codeActivate").value;
     let xhr = new XMLHttpRequest();
     let url = erpUrl + "weightcontrol/detail";

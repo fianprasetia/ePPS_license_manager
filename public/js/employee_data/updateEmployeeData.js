@@ -12,7 +12,7 @@ async function showModalUpdateEmployee(id) {
     myModal.toggle();
   }
   document.body.style.overflowY = 'hidden';
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   var xhr = new XMLHttpRequest();
   var url = mainUrl + "employee/id"
   xhr.onerror = function () {
@@ -167,7 +167,7 @@ async function showModalUpdateEmployee(id) {
 
 }
 async function updateEmployee() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

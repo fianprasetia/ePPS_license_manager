@@ -6,7 +6,7 @@ async function selectContent() {
         await getAccessToken()
         // alert("ksong")
     }
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = await "file/language.json";
     fetch(data)
         .then((response) => response.json())
@@ -83,7 +83,7 @@ async function selectContent() {
     }
 }
 async function selectEmployee() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var token = await JSON.parse(getCookie("dataToken"));
     var companyType = await JSON.parse(getCookie("dataCompany"));
     const companyTypeCode = companyType[0]["code_company_type"]
@@ -212,7 +212,7 @@ async function selectEmployee() {
     return false;
 }
 async function selectGender(genderCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "gender/bylanguage"
@@ -364,7 +364,7 @@ async function selectCountry(countryCode) {
     }
 }
 async function selectDepartment(departmentCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "department/bylanguage"
@@ -437,7 +437,7 @@ async function selectDepartment(departmentCode) {
     return false;
 }
 async function selectJobTitle(jobTitleCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "jobtitle/bylanguage"
@@ -510,7 +510,7 @@ async function selectJobTitle(jobTitleCode) {
     return false;
 }
 async function selectCompany(companyCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var token = await JSON.parse(getCookie("dataToken"));
     var companyType = await JSON.parse(getCookie("dataCompany"));
     const companyTypeCode = companyType[0]["code_company_type"]
@@ -589,7 +589,7 @@ async function selectCompany(companyCode) {
     return false;
 }
 async function selectType(typeCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employeetype/bylanguage"
@@ -662,7 +662,7 @@ async function selectType(typeCode) {
     return false;
 }
 async function selectStatus(statusCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employeestatus/bylanguage"
@@ -735,7 +735,7 @@ async function selectStatus(statusCode) {
     return false;
 }
 async function selectGrade(gradeCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "grade/bylanguage"
@@ -808,7 +808,7 @@ async function selectGrade(gradeCode) {
     return false;
 }
 async function selectWorksite(worksiteCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var token = await JSON.parse(getCookie("dataToken"));
     var companyType = await JSON.parse(getCookie("dataCompany"));
     const companyTypeCode = companyType[0]["code_company_type"]
@@ -891,7 +891,7 @@ async function selectWorksite(worksiteCode) {
     return false;
 }
 async function selectProvinceReception(provinceReceptionCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "company/province"
@@ -978,7 +978,7 @@ async function selectProvinceReception(provinceReceptionCode) {
     return false;
 }
 async function selectCatu(catuCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "catu/bylanguage"
@@ -1051,7 +1051,7 @@ async function selectCatu(catuCode) {
     return false;
 }
 async function selectStatusTax(statusTaxCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employeestatustax/bylanguage"
@@ -1124,7 +1124,7 @@ async function selectStatusTax(statusTaxCode) {
     return false;
 }
 async function selectSalary(salaryCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employeesalary/bylanguage"
@@ -1199,7 +1199,7 @@ async function selectSalary(salaryCode) {
     return false;
 }
 async function selectMarital(maritalCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employeemarital/bylanguage"
@@ -1274,7 +1274,7 @@ async function selectMarital(maritalCode) {
     return false;
 }
 async function selectReligion(religionCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "religion/bylanguage"
@@ -1349,7 +1349,7 @@ async function selectReligion(religionCode) {
     return false;
 }
 async function selectEducation(educationCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "education/bylanguage"

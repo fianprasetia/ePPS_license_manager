@@ -6,7 +6,7 @@ async function showLayoutUpdateData(id) {
     document.getElementById('getWeightInBtn').classList.replace('btn-primary', 'btn-secondary');
     document.getElementById('getWeightOutBtn').classList.replace('btn-secondary', 'btn-primary');
 
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     let xhr = new XMLHttpRequest();
     let url = mainUrl + "weightbridge/bycode";
     xhr.onerror = function () {
@@ -115,7 +115,7 @@ async function updateAndPrint() {
     }
 
 
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const dataLogin = await JSON.parse(getCookie("dataLogin"));
     const employeeID = dataLogin["idEmployee"];
     const ticketNo = document.getElementById("ticket").value;

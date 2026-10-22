@@ -21,7 +21,7 @@ async function showModalItemMaster() {
   document.getElementById("selectStatus").innerHTML = "<option class='fw-light text-uppercase' selected disabled value=''>" + kapital(select) + "</option> <option value='0'>" + kapital(active) + "</option><option value='1'>" + kapital(nonactive) + "</option>"
 }
 async function insertItemMaster() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

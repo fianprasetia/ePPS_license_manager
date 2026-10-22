@@ -2,7 +2,7 @@ async function showModalUpdateMenu(id) {
     var myModal = new bootstrap.Modal(document.getElementById("modalMenu"), { keyboard: false });
     myModal.toggle();
     await selectLanguage()
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const dataLogin = await JSON.parse(getCookie("dataLogin"));
     const username = dataLogin["username"];
     const element = document.getElementById(id);
@@ -90,7 +90,7 @@ async function updateMenu() {
         }
         Dashmix.onLoad(() => e.init());
     })();
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const dataLogin = await JSON.parse(getCookie("dataLogin"));
     const username = dataLogin["username"];
     const code = document.getElementById("code").value

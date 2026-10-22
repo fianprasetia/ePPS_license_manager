@@ -1,7 +1,7 @@
 selectContent();
 async function selectContent() {
 
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = "file/language.json";
     const response = await fetch(data);
     const jsonData = await response.json();
@@ -24,7 +24,7 @@ async function selectContent() {
 async function selectTranslate() {
     return new Promise(async (resolve, reject) => {
         try {
-            let language = JSON.parse(getCookie("language"));
+            let language = JSON.parse(getCookie("languageLM"));
             // let token = JSON.parse(getCookie("dataToken"));
             // if (!token) {
             //     token = await getAccessToken();

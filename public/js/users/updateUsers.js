@@ -1,7 +1,7 @@
 async function showModalUpdateUsers(id) {
   var myModal = new bootstrap.Modal(document.getElementById("modalUsers"), { keyboard: false });
   myModal.toggle();
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   document.getElementById("selectFullname").disabled = true
   document.getElementById("passwordhide").hidden = true
   document.getElementById("load").innerHTML = "<a id='cancelBtn' onclick='closeModal()' class='btn btn-danger'>" + kapital(cancel) + "</a> <a id='doneBtn' type='submit' onclick='updateUsers()' class='btn btn-primary'>" + kapital(done) + "</a>"
@@ -76,7 +76,7 @@ async function showModalUpdateUsers(id) {
   return false;
 }
 async function updateUsers() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const usernameLogin = dataLogin["username"];
   const fullname = document.getElementById("selectFullname").value
@@ -204,7 +204,7 @@ async function showModalUpdatePassword(id) {
   document.getElementById("selectUsernamePassword").disabled = true;
 }
 async function updatePassword() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const usernameLogin = dataLogin["username"];
   const username = document.getElementById("selectUsernamePassword").value
@@ -380,7 +380,7 @@ async function showModalUpdateAccess(id) {
   const username = document.getElementById("selectUsernameAccess").value = id
   await selectUsername()
   document.getElementById("loadAccess").innerHTML = "<a id='cancelBtn' onclick='closeModal()' class='btn btn-danger'>" + kapital(cancel) + "</a> <button type='submit' id='" + id + "' onclick='updateAccess(id)' class='btn btn-primary'>" + kapital(done) + "</button>"
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   var xhr = new XMLHttpRequest();
   var url = mainUrl + "users/authentication"
   xhr.onerror = function () {
@@ -595,7 +595,7 @@ function scriptTree() {
 }
 async function updateAccess() {
   const username = document.getElementById("selectUsernameAccess").value
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const usernameLogin = dataLogin["username"];
   var userAccess = [];
@@ -702,7 +702,7 @@ function headersMenuAccess(param, cancel, done) {
   document.getElementById("loadAccess").innerHTML = content;
 }
 async function updateCopyAccess() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));
@@ -889,7 +889,7 @@ async function showModalUpdateMobileAccess(id) {
   const username = document.getElementById("selectUsernameAccess").value = id
   await selectUsernameMobile()
   document.getElementById("loadAccess").innerHTML = "<a id='cancelBtn' onclick='closeModal()' class='btn btn-danger'>" + kapital(cancel) + "</a> <button type='submit' id='" + id + "' onclick='updateAccessMobile(id)' class='btn btn-primary'>" + kapital(done) + "</button>"
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   var xhr = new XMLHttpRequest();
   var url = mainUrl + "users/authenticationmobile"
   xhr.onerror = function () {
@@ -1064,7 +1064,7 @@ async function showModalUpdateMobileAccess(id) {
 }
 async function updateAccessMobile() {
   const username = document.getElementById("selectUsernameAccess").value
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const usernameLogin = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));
@@ -1175,7 +1175,7 @@ function headersMenuAccessMobile(param, cancel, done) {
   document.getElementById("loadAccess").innerHTML = content;
 }
 async function updateCopyAccessMobile() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

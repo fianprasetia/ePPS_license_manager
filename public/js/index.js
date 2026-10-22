@@ -1,6 +1,6 @@
 content();
 async function content() {
-  const language =  await JSON.parse(getCookie("language"));
+  const language =  await JSON.parse(getCookie("languageLM"));
   const data = "file/language.json";
   fetch(data)
     .then((response) => response.json())

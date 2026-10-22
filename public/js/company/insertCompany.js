@@ -19,7 +19,7 @@ async function showModalInsertCompany(el) {
   document.getElementById("load").innerHTML = "<a id='cancelBtn' onclick='closeModal()' class='btn  btn-danger'>" + kapital(cancel) + "</a> <button id='doneBtn' type='submit' onclick='insertCompany()' class='btn  btn-primary'>" + kapital(done) + "</button>"
 }
 async function insertCompany() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

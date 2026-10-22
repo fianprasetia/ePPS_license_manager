@@ -26,7 +26,7 @@ async function showModalUpdateLanguage(el) {
     document.getElementById("load").innerHTML = "<a id='cancelBtn' onclick='closeModal()' class='btn  btn-danger'>" + kapital(cancel) + "</a> <a id='doneBtn' type='submit' onclick='updateLanguage()' class='btn  btn-primary'>" + kapital(done) + "</a>"
 }
 async function updateLanguage() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const key = document.getElementById("key").value
     const elements = document.getElementsByName("language[]");
     let valuesLanguage = [];

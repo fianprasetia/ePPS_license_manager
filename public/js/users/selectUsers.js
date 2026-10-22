@@ -1,5 +1,5 @@
 async function selectContent() {
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = await "file/language.json";
     fetch(data)
         .then((response) => response.json())
@@ -31,7 +31,7 @@ async function selectContent() {
     }
 }
 async function selectUsers() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "users"
     xhr.onerror = function () {
@@ -104,7 +104,7 @@ async function selectUsers() {
     return false;
 }
 async function selectEmployee(employeeID) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "employee"
     xhr.onerror = function () {
@@ -177,7 +177,7 @@ async function selectEmployee(employeeID) {
     return false;
 }
 async function selectUsername() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "users/web"
     xhr.onerror = function () {

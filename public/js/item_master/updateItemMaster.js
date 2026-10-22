@@ -12,7 +12,7 @@ async function showModalUpdateItemMaster(id) {
     myModal.toggle();
   }
 
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   var xhr = new XMLHttpRequest();
   var url = mainUrl + "itemmaster/id"
   xhr.onerror = function () {
@@ -78,7 +78,7 @@ async function showModalUpdateItemMaster(id) {
   return false;
 }
 async function updateItemMaster() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

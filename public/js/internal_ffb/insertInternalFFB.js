@@ -64,7 +64,7 @@ async function save() {
     if (!isValid) {
         return false
     }
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const dataLogin = await JSON.parse(getCookie("dataLogin"));
     const employeeID = dataLogin["idEmployee"];
     const estate = document.getElementById("estate").value

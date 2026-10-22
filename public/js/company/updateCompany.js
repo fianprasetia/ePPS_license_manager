@@ -1,6 +1,6 @@
 async function showModalUpdateCompany(id) {
   // let token = await JSON.parse(getCookie("dataToken"));
-  let language = await JSON.parse(getCookie("language"));
+  let language = await JSON.parse(getCookie("languageLM"));
   // if (token == null) {
   //   await getAccessToken()
   //   if (token == null) {
@@ -85,7 +85,7 @@ async function showModalUpdateCompany(id) {
   return false;
 }
 async function updateCompany() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const username = dataLogin["username"];
   var token = await JSON.parse(getCookie("dataToken"));

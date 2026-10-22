@@ -39,7 +39,7 @@ async function insertVehicleNumber() {
     if (!isValid) {
         return false
     }
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const vehicleNumber = document.getElementById("vehicleNumber").value
     const status = document.getElementById("status").value
     var xhr = new XMLHttpRequest();

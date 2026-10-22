@@ -1,6 +1,6 @@
 selectContent()
 async function selectContent() {
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = await "file/language.json";
     fetch(data)
         .then((response) => response.json())
@@ -13,7 +13,7 @@ async function selectContent() {
     }
 }
 async function selectMillActivation() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     let xhr = new XMLHttpRequest();
     let url = mainUrl + "millactivation";
     xhr.onerror = function () {

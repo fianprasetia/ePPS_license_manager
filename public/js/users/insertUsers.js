@@ -9,7 +9,7 @@ async function showModalInsertUsers(id) {
   document.getElementById("selectStatusActive").innerHTML = "<option class='fw-light text-uppercase' selected disabled value=''>" + kapital(select) + "</option> <option value='1'>" + kapital(active) + "</option><option value='0'>" + kapital(nonactive) + "</option>"
 }
 async function insertUsers() {
-  const language = await JSON.parse(getCookie("language"));
+  const language = await JSON.parse(getCookie("languageLM"));
   const dataLogin = await JSON.parse(getCookie("dataLogin"));
   const fullname = document.getElementById("selectFullname").value
   const username = document.getElementById("selectUsername").value

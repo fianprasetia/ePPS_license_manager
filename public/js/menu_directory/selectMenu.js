@@ -1,5 +1,5 @@
 async function selectContent() {
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = await "file/language.json";
     fetch(data)
         .then((response) => response.json())
@@ -19,7 +19,7 @@ async function selectContent() {
     }
 }
 async function selectMenu() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "menu"
     xhr.onerror = function () {

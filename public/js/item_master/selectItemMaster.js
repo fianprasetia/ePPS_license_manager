@@ -1,7 +1,7 @@
 async function selectContent() {
 
 
-    let language = await JSON.parse(getCookie("language"));
+    let language = await JSON.parse(getCookie("languageLM"));
     const data = "file/language.json";
 
     // Fetch data dan tunggu hingga selesai
@@ -39,7 +39,7 @@ async function selectContent() {
 }
 
 async function selectItemMaster() {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const searchDescription = document.getElementById("searchDescription").value
     const searchCategory = document.getElementById("searchCategory").value
     var xhr = new XMLHttpRequest();
@@ -124,7 +124,7 @@ async function selectItemMaster() {
     return false;
 }
 async function selectUOM(uomCode) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     const dataUOM = "file/uom.json";
     fetch(dataUOM)
         .then((response) => response.json())
@@ -154,7 +154,7 @@ async function selectUOM(uomCode) {
     }
 }
 async function selectItemCategory(codeCategory) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "itemcategory"
     xhr.onerror = function () {
@@ -225,7 +225,7 @@ async function selectItemCategory(codeCategory) {
     return false;
 }
 async function selectSearchItemCategory(codeCategory) {
-    const language = await JSON.parse(getCookie("language"));
+    const language = await JSON.parse(getCookie("languageLM"));
     var xhr = new XMLHttpRequest();
     var url = mainUrl + "itemcategory"
     xhr.onerror = function () {
