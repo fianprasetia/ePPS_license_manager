@@ -28,8 +28,8 @@ jobs:
         host: ${{ secrets.SSH_HOST_IDCLOUDHOST_PROD }}
         username: ${{ secrets.SSH_USER_IDCLOUDHOST_PROD }}
         password: ${{ secrets.SSH_PASSWORD_IDCLOUDHOST_PROD }}
-        port: ${{ secrets.SSH_PORT_IDCLOUDHOST__PROD }}  # Opsional, defaultnya 22
+        port: ${{ secrets.SSH_PORT_IDCLOUDHOST__PROD }}  # Opsional, defaultnya 22  
         script: |
-          cd ./ # Sesuaikan dengan lokasi aplikasi
-          pm2 restart 1   
-        debug: true
+          cd /home/USERNAME/license_manager
+          pm2 restart all
+          pm2 status
