@@ -30,6 +30,6 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD_IDCLOUDHOST_PROD }}
         port: ${{ secrets.SSH_PORT_IDCLOUDHOST__PROD }}  # Opsional, defaultnya 22  
         script: |
-          cd /home/USERNAME/license_manager
+          cd /home/license_manager
           pm2 restart all
           pm2 status
