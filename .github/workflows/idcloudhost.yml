@@ -21,13 +21,18 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD_IDCLOUDHOST_PROD }}
         source: ./
         target: "/home/license_manager"
-
-    - name: Restart PM2
+    
+    - name: Test SSH Connection
       uses: appleboy/ssh-action@v0.1.7
       with:
-        host: ${{ secrets.SSH_HOST_IDCLOUDHOST_PROD }}
-        username: ${{ secrets.SSH_USER_IDCLOUDHOST_PROD }}
-        password: ${{ secrets.SSH_PASSWORD_IDCLOUDHOST_PROD }}
-        script: |
-          cd ./
-          pm2 restart all
+          host: ${{ secrets.SSH_HOST_IDCLOUDHOST_PROD }}
+          username: ${{ secrets.SSH_USER_IDCLOUDHOST_PROD }}
+          password: ${{ secrets.SSH_PASSWORD_IDCLOUDHOST_PROD }}
+          port: ${{ secrets.SSH_PORT_IDCLOUDHOST_PROD }}
+          timeout: 30s
+          command_timeout: 30s
+          script: |
+            whoami
+            pwd
+            hostname
+            pm2 status
