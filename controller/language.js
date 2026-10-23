@@ -7,7 +7,7 @@ const controller = {};
 controller.selectLanguage = async function (req, res) {
     try {
         const language = req.body.language_POST || 'en';
-        const selectLanguageData = await model.adm_language.findAll({
+        const selectLanguageData = await model.language.findAll({
             order: [
                 ['language_code', 'ASC'],
             ],

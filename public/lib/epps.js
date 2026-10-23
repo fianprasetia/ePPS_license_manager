@@ -11,58 +11,58 @@
 //   }
 // });
 
-async function testClientBandwidth() {
-  const xhr = new XMLHttpRequest();
-  const fileSizeInBits = 5 * 1024 * 1024 * 8;
-  const start = performance.now();
+// async function testClientBandwidth() {
+//   const xhr = new XMLHttpRequest();
+//   const fileSizeInBits = 5 * 1024 * 1024 * 8;
+//   const start = performance.now();
 
-  xhr.open("GET", mainUrl + "download-test-file.bin", true);
-  xhr.responseType = "blob";
+//   xhr.open("GET", mainUrl + "download-test-file.bin", true);
+//   xhr.responseType = "blob";
 
-  xhr.onload = function () {
-    const end = performance.now();
-    const durationInSeconds = (end - start) / 1000;
-    const speedMbps = (fileSizeInBits / durationInSeconds) / (1024 * 1024);
+//   xhr.onload = function () {
+//     const end = performance.now();
+//     const durationInSeconds = (end - start) / 1000;
+//     const speedMbps = (fileSizeInBits / durationInSeconds) / (1024 * 1024);
 
-    let keterangan = "";
-    let iconColor = "text-secondary";
+//     let keterangan = "";
+//     let iconColor = "text-secondary";
 
-    if (speedMbps < 1) {
-      keterangan = weak;
-      iconColor = "text-danger";
-    } else if (speedMbps <= 4) {
-      keterangan = enough;
-      iconColor = "text-warning";
-    } else if (speedMbps <= 20) {
-      keterangan = normal;
-      iconColor = "text-info";
-    } else if (speedMbps <= 50) {
-      keterangan = good;
-      iconColor = "text-success";
-    } else {
-      keterangan = fast;
-      iconColor = "text-success";
-    }
+//     if (speedMbps < 1) {
+//       keterangan = weak;
+//       iconColor = "text-danger";
+//     } else if (speedMbps <= 4) {
+//       keterangan = enough;
+//       iconColor = "text-warning";
+//     } else if (speedMbps <= 20) {
+//       keterangan = normal;
+//       iconColor = "text-info";
+//     } else if (speedMbps <= 50) {
+//       keterangan = good;
+//       iconColor = "text-success";
+//     } else {
+//       keterangan = fast;
+//       iconColor = "text-success";
+//     }
 
-    // Simpan hasil ke localStorage
-    localStorage.setItem("bandwidthTested", "true");
-    localStorage.setItem("bandwidthIconColor", iconColor);
-    localStorage.setItem("bandwidthKeterangan", keterangan);
-    localStorage.setItem("bandwidthSpeed", speedMbps.toFixed(2));
+//     // Simpan hasil ke localStorage
+//     localStorage.setItem("bandwidthTested", "true");
+//     localStorage.setItem("bandwidthIconColor", iconColor);
+//     localStorage.setItem("bandwidthKeterangan", keterangan);
+//     localStorage.setItem("bandwidthSpeed", speedMbps.toFixed(2));
 
 
-    // Tampilkan ikon koneksi
-    document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal ${iconColor}"></i>`;
-    document.getElementById("textConnection").innerHTML = `${keterangan} (${speedMbps.toFixed(2)} Mbps)`
-  };
+//     // Tampilkan ikon koneksi
+//     document.getElementById("connection").innerHTML = `<i class="fa-solid fa-signal ${iconColor}"></i>`;
+//     document.getElementById("textConnection").innerHTML = `${keterangan} (${speedMbps.toFixed(2)} Mbps)`
+//   };
 
-  xhr.onerror = function () {
-    console.error("Gagal mengunduh file untuk tes bandwidth.");
-    document.getElementById("connection").innerHTML =
-      `<i class="fa-solid fa-signal text-muted" title="Gagal mengukur koneksi"></i>`;
-  };
-  xhr.send();
-}
+//   xhr.onerror = function () {
+//     console.error("Gagal mengunduh file untuk tes bandwidth.");
+//     document.getElementById("connection").innerHTML =
+//       `<i class="fa-solid fa-signal text-muted" title="Gagal mengukur koneksi"></i>`;
+//   };
+//   xhr.send();
+// }
 authorize()
 async function authorize() {
   const path = window.location.pathname;

@@ -82,6 +82,9 @@ app.get("/login", function (req, res) {
 app.get("/menu_directory", function (req, res) {
     res.render("pages/menu_directory");
 });
+app.get("/language", function (req, res) {
+    res.render("pages/language");
+});
 // =====================================================
 // VALIDATE LICENSE
 // =====================================================
@@ -132,8 +135,8 @@ const routes = [
     ['/', require('./routes/index')],
     ['/login', require('./routes/login')],
     ['/menu', require('./routes/menu')],
-    // ['/language', require('./routes/language')],
-    // ['/translate', require('./routes/translate')],
+    ['/language', require('./routes/language')],
+    ['/translate', require('./routes/translate')],
     // ['/users', require('./routes/users')],
     // ['/employee', require('./routes/employee')],
     // ['/millactivation', require('./routes/mill_activation')],
