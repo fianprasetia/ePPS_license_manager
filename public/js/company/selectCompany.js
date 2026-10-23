@@ -228,13 +228,13 @@ async function selectCompanyType(codeCompany) {
             "<option class='fw-light text-uppercase' value='" +
             filternotSubData[i]["code_company_type"] +
             "'>" +
-            kapital(filternotSubData[i]["adm_company_type_translations"][0]["translation"]) +
+            kapital(filternotSubData[i]["company_type_translations"][0]["translation"]) +
             "</option>";
         }
         if (codeCompany == "" || codeCompany == undefined) {
           mainOptionItem += "<option class='fw-light text-uppercase' selected disabled value=''>" + kapital(select) + "</option>";
         } else {
-          mainOptionItem += "<option class='fw-light text-uppercase' value=" + filterSubData[0]["code_company_type"] + ">" + kapital(filterSubData[0]["adm_company_type_translations"][0]["translation"]) + "</option>";
+          mainOptionItem += "<option class='fw-light text-uppercase' value=" + filterSubData[0]["code_company_type"] + ">" + kapital(filterSubData[0]["company_type_translations"][0]["translation"]) + "</option>";
         }
       }
       document.getElementById("type").innerHTML = "" + mainOptionItem + " " + subOptionItem + "";

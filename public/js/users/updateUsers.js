@@ -33,7 +33,7 @@ async function showModalUpdateUsers(id) {
         const status = responseData[0]["status"]
         // const accessMobile = responseData[0]["access_mobile"]
         document.getElementById("selectUsername").value = responseData[0]["username"]
-        document.getElementById("selectFullname").innerHTML = "<option class='fw-light text-uppercase' selected value='" + responseData[0]["employee_id"] + "'>" + kapital(responseData[0]["adm_employee"]["fullname"]) + "</option> "
+        document.getElementById("selectFullname").innerHTML = "<option class='fw-light text-uppercase' selected value='" + responseData[0]["employee_id"] + "'>" + kapital(responseData[0]["employee"]["fullname"]) + "</option> "
         // mainOptionWeb = "<option  class='fw-light text-uppercase' value=" + accessWeb + ">" + (accessWeb == "0" ? kapital(nonactive) : kapital(active)) + "</option>";
         // optionWeb = "<option  class='fw-light text-uppercase' value=" + (accessWeb != "0" ? "0" : "1") + ">" + (accessWeb != "0" ? kapital(nonactive) : kapital(active)) + "</option>";
         // document.getElementById("selectAccess_web").innerHTML = "" + mainOptionWeb + "" + optionWeb + "";

@@ -12,10 +12,10 @@ const controller = {};
 controller.selectUsers = async function (req, res) {
     try {
         const language = req.body.language_POST || 'en';
-        const selectLoginData = await model.adm_user_login.findAll({
+        const selectLoginData = await model.user_login.findAll({
             include: [
                 {
-                    model: model.adm_employee,
+                    model: model.employee,
                 },
             ],
         });
@@ -38,7 +38,7 @@ controller.insertUsers = async function (req, res) {
         const password = md5(req.body.password_POST);
         const status = req.body.status_POST;
 
-        const insertLoginData = await model.adm_user_login.findAll({
+        const insertLoginData = await model.user_login.findAll({
             where: {
                 username: username
             },
@@ -50,7 +50,7 @@ controller.insertUsers = async function (req, res) {
             return responseHelper.Unsuccessful(res, messages[language]?.userExists || "Username already exists");
         }
 
-        const insertLoginNewData = await model.adm_user_login.create(
+        const insertLoginNewData = await model.user_login.create(
             {
                 username: username,
                 employee_id: employeeId,
@@ -79,10 +79,10 @@ controller.selectUsersByUsername = async function (req, res) {
     try {
         const language = req.body.language_POST || 'en';
         const username = req.body.username_POST;
-        const selectUsersByUsernameData = await model.adm_user_login.findAll({
+        const selectUsersByUsernameData = await model.user_login.findAll({
             include: [
                 {
-                    model: model.adm_employee,
+                    model: model.employee,
                 },
             ],
             where: {
@@ -106,7 +106,7 @@ controller.updatePassword = async function (req, res) {
         const language = req.body.language_POST || 'en';
         const password = md5(req.body.password_POST);
 
-        const updatePasswordData = await model.adm_user_login.update(
+        const updatePasswordData = await model.user_login.update(
             {
                 password: password,
                 old_password: password,
@@ -141,7 +141,7 @@ controller.updateUsers = async function (req, res) {
         const employeeID = req.body.employeeID_POST;
         const status = req.body.status_POST;
 
-        const updateUsersData = await model.adm_user_login.update(
+        const updateUsersData = await model.user_login.update(
             {
                 username: username,
                 status: status,
@@ -172,7 +172,7 @@ controller.selectAuthByUsername = async function (req, res) {
         const language = req.body.language_POST || 'en';
         const username = req.body.username_POST;
 
-        const selectAuthByUsernameData = await model.adm_authentication.findAll({
+        const selectAuthByUsernameData = await model.authentication.findAll({
             include: [
                 {
                     model: model.menu,
@@ -277,14 +277,14 @@ controller.insertAuthByUsername = async function (req, res) {
             });
         }
 
-        await model.adm_authentication.destroy({
+        await model.authentication.destroy({
             where: {
                 username: username
             },
             transaction
         });
 
-        const insertAuthMenuData = await model.adm_authentication.bulkCreate(
+        const insertAuthMenuData = await model.authentication.bulkCreate(
             menuUserAccess,
             { transaction }
         );
@@ -311,7 +311,7 @@ controller.insertAuthByUsername = async function (req, res) {
 controller.selectUsersWeb = async function (req, res) {
     try {
         const language = req.body.language_POST || 'en';
-        const selectLoginData = await model.adm_user_login.findAll({
+        const selectLoginData = await model.user_login.findAll({
             order: [
                 ['username', 'ASC'],
             ],
@@ -329,7 +329,7 @@ controller.selectUsersWeb = async function (req, res) {
 controller.selectUsersMobile = async function (req, res) {
     try {
         const language = req.body.language_POST || 'en';
-        const selectLoginData = await model.adm_user_login.findAll({
+        const selectLoginData = await model.user_login.findAll({
             where: {
                 access_mobile: 1
             },
@@ -355,7 +355,7 @@ controller.insertAuthCopyUser = async function (req, res) {
         const source = req.body.source_POST;
         const target = req.body.target_POST;
 
-        const selectAuthsourceData = await model.adm_authentication.findAll({
+        const selectAuthsourceData = await model.authentication.findAll({
             where: {
                 username: source
             },
@@ -370,7 +370,7 @@ controller.insertAuthCopyUser = async function (req, res) {
             return responseHelper.Unsuccessful(res, messages[language]?.failedData || "Source auth data not found");
         }
 
-        await model.adm_authentication.destroy({
+        await model.authentication.destroy({
             where: {
                 username: target
             },
@@ -385,7 +385,7 @@ controller.insertAuthCopyUser = async function (req, res) {
             });
         }
 
-        const insertAuthsourceData = await model.adm_authentication.bulkCreate(
+        const insertAuthsourceData = await model.authentication.bulkCreate(
             menuUserAccess,
             { transaction }
         );
@@ -416,7 +416,7 @@ controller.updateWorksite = async function (req, res) {
         const language = req.body.language_POST || 'en';
         const worksite = req.body.worksite_POST;
 
-        const updateWorksiteData = await model.adm_user_login.update(
+        const updateWorksiteData = await model.user_login.update(
             {
                 code_company: worksite,
             },
@@ -452,7 +452,7 @@ controller.selectAuthMobileByUsername = async function (req, res) {
         const language = req.body.language_POST || 'en';
         const username = req.body.username_POST;
 
-        const selectAuthByUsernameData = await model.adm_authentication_mobile.findAll({
+        const selectAuthByUsernameData = await model.authentication_mobile.findAll({
             include: [
                 {
                     model: model.menu_mobile,
@@ -557,14 +557,14 @@ controller.insertAuthMobileByUsername = async function (req, res) {
             });
         }
 
-        await model.adm_authentication_mobile.destroy({
+        await model.authentication_mobile.destroy({
             where: {
                 username: username
             },
             transaction
         });
 
-        const insertAuthMenuData = await model.adm_authentication_mobile.bulkCreate(
+        const insertAuthMenuData = await model.authentication_mobile.bulkCreate(
             menuUserAccess,
             { transaction }
         );
@@ -596,7 +596,7 @@ controller.insertAuthCopyUserMobile = async function (req, res) {
         const source = req.body.source_POST;
         const target = req.body.target_POST;
 
-        const selectAuthsourceData = await model.adm_authentication_mobile.findAll({
+        const selectAuthsourceData = await model.authentication_mobile.findAll({
             where: {
                 username: source
             },
@@ -611,7 +611,7 @@ controller.insertAuthCopyUserMobile = async function (req, res) {
             return responseHelper.Unsuccessful(res, messages[language]?.failedData || "Source auth data not found");
         }
 
-        await model.adm_authentication_mobile.destroy({
+        await model.authentication_mobile.destroy({
             where: {
                 username: target
             },
@@ -626,7 +626,7 @@ controller.insertAuthCopyUserMobile = async function (req, res) {
             });
         }
 
-        const insertAuthsourceData = await model.adm_authentication_mobile.bulkCreate(
+        const insertAuthsourceData = await model.authentication_mobile.bulkCreate(
             menuUserAccess,
             { transaction }
         );

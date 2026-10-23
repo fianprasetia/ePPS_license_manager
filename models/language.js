@@ -1,6 +1,6 @@
 const koneksi = require('../config/database');
 const Sequelize = require('sequelize');
-// const adm_auth = require("./adm_auth");
+// const auth = require("./auth");
 const language = koneksi.define(
   'language',
   {

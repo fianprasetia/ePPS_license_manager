@@ -147,7 +147,7 @@ async function selectEmployee() {
                         ddmmyyyy(dateBirth) +
                         "</td>\
                             <td class='fw-light text-center text-uppercase'>" +
-                        responseData[i]["adm_company"]["name"] +
+                        responseData[i]["company"]["name"] +
                         "</td>\
                             <td class='fw-light  text-center text-uppercase'>" +
                         responseData[i]["WorksiteCompany"]["name"] +

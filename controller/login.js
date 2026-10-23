@@ -112,7 +112,7 @@ controller.selectLogin = async function (req, res) {
 //         const username = req.body.username_POST;
 //         const password = md5(req.body.password_POST);
 
-//         const selectUserData = await model.adm_user_login.findAll({
+//         const selectUserData = await model.user_login.findAll({
 //             where: {
 //                 username: username
 //             },
@@ -129,7 +129,7 @@ controller.selectLogin = async function (req, res) {
 //             return responseHelper.Unsuccessful(res, messages[language]?.passwordSAme);
 //         }
 
-//         const updatePasswordData = await model.adm_user_login.update(
+//         const updatePasswordData = await model.user_login.update(
 //             {
 //                 password: password,
 //                 change_password: 1
@@ -165,10 +165,10 @@ controller.selectLogin = async function (req, res) {
 //         const language = req.body.language_POST;
 
 //         // Query Login
-//         const selectLoginData = await model.adm_user_login.findAll({
+//         const selectLoginData = await model.user_login.findAll({
 //             include: [
 //                 {
-//                     model: model.adm_company,
+//                     model: model.company,
 //                     attributes: ["name", "code_company_type", "code_company"],
 //                 },
 //                 {
@@ -208,7 +208,7 @@ controller.selectLogin = async function (req, res) {
 //         }
 
 //         // Query Authentication Mobile
-//         const selectAuthenticationData = await model.adm_authentication_mobile.findAll({
+//         const selectAuthenticationData = await model.authentication_mobile.findAll({
 //             where: {
 //                 username: username
 //             },
@@ -248,8 +248,8 @@ controller.selectLogin = async function (req, res) {
 //         }
 
 //         // Query Company
-//         const codeCompany = user.adm_company?.code_company;
-//         const selectCompanyData = await model.adm_company.findAll({
+//         const codeCompany = user.company?.code_company;
+//         const selectCompanyData = await model.company.findAll({
 //             where: {
 //                 code_company: codeCompany
 //             },
@@ -274,7 +274,7 @@ controller.selectLogin = async function (req, res) {
 //         });
 
 //         // Query Worksite List
-//         const selectWorksiteByCompanyCodeData = await model.adm_company.findAll({
+//         const selectWorksiteByCompanyCodeData = await model.company.findAll({
 //             attributes: ["code_company", "name", "code_company_type"],
 //             where: {
 //                 code_company: {

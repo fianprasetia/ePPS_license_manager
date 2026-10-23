@@ -60,7 +60,7 @@ async function selectUsers() {
                     tableItem +=
                         "<tr>\
                             <td class='fw-light text-center'>" + responseData[i]["employee_id"] + "</td>\
-                            <td class='fw-light text-center text-uppercase'>" + responseData[i]["adm_employee"]["fullname"] + "</td>\
+                            <td class='fw-light text-center text-uppercase'>" + responseData[i]["employee"]["fullname"] + "</td>\
                             <td class='fw-light text-center'>" + responseData[i]["username"] + "</td>\
                             <td class='fw-light text-center'>" + (responseData[i]["status"] == 0 ? "<i class='fa-solid fa-circle-minus fa-xl text-danger'></i>" : "<i class='fa-solid fa-circle-check fa-xl text-primary'></i>") + "</td>\
                             <td class='fw-light text-center'><div class='btn-group'>" + editUser + passUser + menuWebUser + "</div></td>\

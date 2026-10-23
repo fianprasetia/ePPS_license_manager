@@ -85,6 +85,13 @@ app.get("/menu_directory", function (req, res) {
 app.get("/language", function (req, res) {
     res.render("pages/language");
 });
+app.get('/users', (req, res) => {
+    res.render('pages/users');
+});
+
+app.get('/language', (req, res) => {
+    res.render('pages/language');
+});
 // =====================================================
 // VALIDATE LICENSE
 // =====================================================
@@ -137,8 +144,8 @@ const routes = [
     ['/menu', require('./routes/menu')],
     ['/language', require('./routes/language')],
     ['/translate', require('./routes/translate')],
-    // ['/users', require('./routes/users')],
-    // ['/employee', require('./routes/employee')],
+    ['/users', require('./routes/users')],
+    ['/employee', require('./routes/employee')],
     // ['/millactivation', require('./routes/mill_activation')],
     // ['/company', require('./routes/company')],
     // ['/vehiclenumber', require('./routes/vehicle_number')],
