@@ -96,7 +96,7 @@ controller.updateMenu = async function (req, res) {
             return responseHelper.Unsuccessful(res, messages[language]?.nodata || "No data available");
         }
 
-        const selectLanguageData = await model.adm_language.findAll({
+        const selectLanguageData = await model.language.findAll({
             order: [
                 ['language_code', 'ASC'],
             ],

@@ -71,11 +71,11 @@ controller.selectEmployeeByType = async function (req, res) {
           }
         },
         {
-          model: model.adm_company,
+          model: model.company,
           attributes: ["name"],
         },
         {
-          model: model.adm_company,
+          model: model.company,
           as: "WorksiteCompany",
           attributes: ["name"],
         },
@@ -225,11 +225,11 @@ controller.selectEmployeeByWorksite = async function (req, res) {
     const selectEmployeeByTypeData = await model.hrd_employee.findAll({
       include: [
         {
-          model: model.adm_company,
+          model: model.company,
           attributes: ["name"],
         },
         {
-          model: model.adm_company,
+          model: model.company,
           as: "WorksiteCompany",
           attributes: ["name"],
         },
@@ -300,7 +300,7 @@ controller.insertEmployee = async function (req, res) {
     const bloodType = jsonData["bloodType_POST"];
     const education = jsonData["education_POST"];
 
-    const selectEmployeeCodeData = await model.adm_company_employee_code.findAll({
+    const selectEmployeeCodeData = await model.company_employee_code.findAll({
       where: {
         code_company: company
       },
@@ -466,7 +466,7 @@ controller.selectEmployeeByID = async function (req, res) {
           }
         },
         {
-          model: model.adm_company,
+          model: model.company,
           attributes: ["name"],
         },
         {
@@ -870,11 +870,11 @@ controller.selectEmployeeByHaverst = async function (req, res) {
     const selectEmployeeByTypeData = await model.hrd_employee.findAll({
       include: [
         {
-          model: model.adm_company,
+          model: model.company,
           attributes: ["name"],
         },
         {
-          model: model.adm_company,
+          model: model.company,
           as: "WorksiteCompany",
           attributes: ["name"],
         },
